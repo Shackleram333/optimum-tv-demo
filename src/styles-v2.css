@@ -22,6 +22,18 @@
   max-width: calc(256.33px * 3 + 8px * 2);
 }
 
+/* The free-text "ask" chip is hollow with a blue outline (vs. the solid
+   white suggestion chips). Padding is trimmed by the border width so it
+   keeps the same footprint as the other chips. */
+.tvw-chipbtn--ask {
+  background: transparent;
+  border: 1.5px solid var(--blue-action);
+  padding: 9.5px 16.5px;
+}
+.tvw-chipbtn--ask:hover {
+  background: #ffffff73;
+}
+
 /* Desktop: suggestion chips wrap onto multiple rows. */
 .tvw-chips {
   flex-wrap: wrap;
