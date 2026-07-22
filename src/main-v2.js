@@ -12542,21 +12542,30 @@ function le() {
                 className: `tvw-chips`,
                 children: [
                   (0, S.jsx)(`div`, { className: `tvw-panel__spark`, children: (0, S.jsx)(ee, { size: 22 }) }, `spark`),
-                  o.map((e, t) =>
-                    (0, S.jsx)(
-                      `button`,
-                      { className: `tvw-chipbtn`, onClick: () => x(e, !0), children: e },
-                      t,
-                    ),
-                  ),
-                  (0, S.jsx)(
-                    `button`,
+                  (0, S.jsxs)(
+                    `div`,
                     {
-                      className: `tvw-chipbtn tvw-chipbtn--ask`,
-                      onClick: () => f(!0),
-                      children: E.inputPlaceholder,
+                      className: `tvw-chips__list`,
+                      children: [
+                        o.map((e, t) =>
+                          (0, S.jsx)(
+                            `button`,
+                            { className: `tvw-chipbtn`, onClick: () => x(e, !0), children: e },
+                            t,
+                          ),
+                        ),
+                        (0, S.jsx)(
+                          `button`,
+                          {
+                            className: `tvw-chipbtn tvw-chipbtn--ask`,
+                            onClick: () => f(!0),
+                            children: E.inputPlaceholder,
+                          },
+                          `ask`,
+                        ),
+                      ],
                     },
-                    `ask`,
+                    `list`,
                   ),
                 ],
               })

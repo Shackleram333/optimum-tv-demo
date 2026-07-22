@@ -55,24 +55,25 @@
   animation: none;
 }
 
-/* Desktop: suggestion chips wrap onto multiple rows. */
+/* Suggestion chips: the sparkle stays at the top-left; the pills live in their
+   own wrapping list beside it, so wrapped rows left-align to the first pill
+   instead of sliding under the sparkle. Works the same on desktop and mobile. */
 .tvw-chips {
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+.tvw-chips__list {
+  display: flex;
   flex-wrap: wrap;
+  gap: 12px;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 .tvw-chipbtn {
   flex: 0 0 auto;
   white-space: nowrap;
 }
-
-/* Mobile: single row, scrollable left-to-right, no visible scrollbar. */
-@media (width<=680px) {
-  .tvw-chips {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-  }
-  .tvw-chips::-webkit-scrollbar {
-    display: none;
-  }
+/* Keep the sparkle vertically centered on the first pill row. */
+.tvw-chips .tvw-panel__spark {
+  height: 43px;
 }
