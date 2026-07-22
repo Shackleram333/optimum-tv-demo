@@ -12567,6 +12567,13 @@ function le() {
                   },
                   `chips`,
                 ),
+              !_ &&
+                n.length > 0 &&
+                (0, S.jsx)(
+                  `div`,
+                  { className: `tvw-userpill`, children: (0, S.jsx)(`span`, { children: n[0].lines[0] }) },
+                  `q0`,
+                ),
             ],
           }),
           !_ &&
@@ -12574,7 +12581,7 @@ function le() {
                 className: `tvw-conversation`,
                 ref: p,
                 children: [
-                  n.map((e) =>
+                  n.slice(1).map((e) =>
                     e.role === `user`
                       ? (0, S.jsx)(
                           `div`,
