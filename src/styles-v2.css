@@ -13,10 +13,13 @@
   min-width: 0;
 }
 
-/* Assistant panel fills the full width of the TV section. */
-.tvw-panel {
+/* Cap the assistant panel and the mobile-savings card to the width of the
+   three plan cards above them (3 cards × 256.33px + 2 gaps × 8px ≈ 785px).
+   They still shrink to fit narrower screens. */
+.tvw-panel,
+.mobile-card {
   width: 100%;
-  max-width: 100%;
+  max-width: calc(256.33px * 3 + 8px * 2);
 }
 
 /* Desktop: suggestion chips wrap onto multiple rows. */
