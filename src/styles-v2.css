@@ -77,3 +77,8 @@
 .tvw-chips .tvw-panel__spark {
   height: 43px;
 }
+/* Follow-up chips have no sparkle/list nesting — they're flat buttons — so
+   they wrap directly (the base nowrap above is only for the sparkle + list row). */
+.tvw-chips--followup {
+  flex-wrap: wrap;
+}
