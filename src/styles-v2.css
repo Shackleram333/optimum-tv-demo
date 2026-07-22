@@ -1,0 +1,42 @@
+/* v2-only overrides. Loaded after styles.css by v2.html; does not affect the current version. */
+
+/* v2: let the TV section expand to fill the page.
+   Trim the oversized side padding and drop the fixed content-column width
+   so the main column stretches across the page (minus the cart aside). */
+.layout {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.layout__main {
+  flex: 1 1 auto;
+  width: auto;
+  min-width: 0;
+}
+
+/* Assistant panel fills the full width of the TV section. */
+.tvw-panel {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Desktop: suggestion chips wrap onto multiple rows. */
+.tvw-chips {
+  flex-wrap: wrap;
+}
+.tvw-chipbtn {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+/* Mobile: single row, scrollable left-to-right, no visible scrollbar. */
+@media (width<=680px) {
+  .tvw-chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tvw-chips::-webkit-scrollbar {
+    display: none;
+  }
+}

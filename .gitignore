@@ -1,0 +1,8 @@
+node_modules
+dist
+.DS_Store
+*.log
+
+# Corporate (Zscaler) root CA used only to let the local dev proxy verify TLS.
+# Machine-specific; regenerate via the command in README if missing.
+certs/
