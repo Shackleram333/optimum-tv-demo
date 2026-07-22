@@ -1,16 +1,21 @@
 /* v2-only overrides. Loaded after styles.css by v2.html; does not affect the current version. */
 
-/* v2: let the TV section expand to fill the page.
+/* v2: let the TV section expand to fill the page on desktop.
    Trim the oversized side padding and drop the fixed content-column width
-   so the main column stretches across the page (minus the cart aside). */
-.layout {
-  padding-left: 40px;
-  padding-right: 40px;
-}
-.layout__main {
-  flex: 1 1 auto;
-  width: auto;
-  min-width: 0;
+   so the main column stretches across the page (minus the cart aside).
+   Scoped to desktop only — without the media query these unset the base
+   stylesheet's mobile layout (later source wins at equal specificity), which
+   forced the 785px desktop width onto phones and overflowed the viewport. */
+@media (width>680px) {
+  .layout {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .layout__main {
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 0;
+  }
 }
 
 /* Cap the assistant panel and the mobile-savings card to the width of the
