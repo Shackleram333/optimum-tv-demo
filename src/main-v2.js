@@ -11984,6 +11984,11 @@ var E = {
   apiBase: ``,
   apiZip: `11747`,
 };
+function mdBold(e) {
+  return String(e)
+    .split(/\*\*(.+?)\*\*/g)
+    .map((t, n) => (n % 2 ? (0, S.jsx)(`strong`, { children: t }, n) : t));
+}
 function se({ plan: e, selected: t, onSelect: n }) {
   let [r, i] = (0, l.useState)(!1),
     [a, o] = (0, l.useState)(null),
@@ -12518,7 +12523,12 @@ function le() {
             e && typeof e.answer == `string` && e.answer.trim()
               ? e.answer.trim()
               : `I couldn't find that for this area.`;
-          l([t]);
+          l(
+            t
+              .split(/\n+/)
+              .map((e) => e.trim())
+              .filter(Boolean),
+          );
         })
         .catch(() => l([`Something went wrong — please try again.`]));
     };
@@ -12570,7 +12580,7 @@ function le() {
                           `div`,
                           {
                             className: `tvw-answer`,
-                            children: e.lines.map((e, t) => (0, S.jsx)(`p`, { children: e }, t)),
+                            children: e.lines.map((e, t) => (0, S.jsx)(`p`, { children: mdBold(e) }, t)),
                           },
                           e.id,
                         ),
