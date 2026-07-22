@@ -34,24 +34,20 @@
   background: #ffffff73;
 }
 
-/* Persistent lead row: the AI sparkle lives here and never unmounts, so it
-   stays put when switching between the chips and the conversation. In the
-   chips state the chips render inline next to it. */
-.tvw-panel__lead {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 12px;
-}
 .tvw-panel__spark {
   display: flex;
   align-items: center;
   flex: 0 0 auto;
 }
-/* The chips take the remaining space on the lead row. */
-.tvw-panel__lead .tvw-chips {
-  flex: 1 1 auto;
+
+/* Conversation view: sparkle inline with the first question pill (sparkle
+   left, pill right). It scrolls with the thread. No slide-in animation so it
+   doesn't flash when the chips switch to the conversation — the sparkle sits
+   in the same spot it occupied in the chips row. */
+.tvw-userpill-row--first {
+  justify-content: space-between;
+  align-items: center;
+  animation: none;
 }
 
 /* Desktop: suggestion chips wrap onto multiple rows. */
