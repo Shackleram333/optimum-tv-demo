@@ -12479,7 +12479,7 @@ function le() {
     _ = n.length === 0 && !i;
   (0, l.useEffect)(() => {
     let e = p.current;
-    e && (e.scrollTop = e.scrollHeight);
+    e && e.scrollTo({ top: e.scrollHeight, behavior: `smooth` });
   }, [n, i]),
     (0, l.useEffect)(
       () => () => {
