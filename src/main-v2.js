@@ -12478,8 +12478,18 @@ function le() {
     },
     _ = n.length === 0 && !i;
   (0, l.useEffect)(() => {
-    let e = p.current;
-    e && e.scrollTo({ top: e.scrollHeight, behavior: `smooth` });
+    let el = p.current;
+    if (!el) return;
+    // Bring the newest question to the top of the scroll area (answer flows
+    // below it). scrollTo clamps to the max scroll, so when there isn't enough
+    // content below the question to fill the viewport it simply scrolls as far
+    // as it can instead of forcing the question to the very top.
+    let rows = el.querySelectorAll(`.tvw-userpill-row`),
+      q = rows[rows.length - 1];
+    if (q) {
+      let delta = q.getBoundingClientRect().top - el.getBoundingClientRect().top;
+      el.scrollTo({ top: el.scrollTop + delta, behavior: `smooth` });
+    } else el.scrollTo({ top: el.scrollHeight, behavior: `smooth` });
   }, [n, i]),
     (0, l.useEffect)(
       () => () => {
