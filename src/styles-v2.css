@@ -41,6 +41,13 @@
   flex: 0 0 auto;
 }
 
+/* Conversation view: keep the sparkle inline on the first question row
+   (sparkle left, user pill right). */
+.tvw-userpill-row--first {
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* Desktop: suggestion chips wrap onto multiple rows. */
 .tvw-chips {
   flex-wrap: wrap;
