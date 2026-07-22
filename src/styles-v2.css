@@ -34,11 +34,11 @@
   background: #ffffff73;
 }
 
-/* AI sparkle at the top of the assistant panel (where the header used to be). */
+/* AI sparkle inline at the start of the suggestion-chips row. */
 .tvw-panel__spark {
   display: flex;
   align-items: center;
-  padding-left: 4px;
+  flex: 0 0 auto;
 }
 
 /* Desktop: suggestion chips wrap onto multiple rows. */
