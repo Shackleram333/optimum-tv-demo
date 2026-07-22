@@ -47,7 +47,7 @@ window.fetch = function (input, init) {
       const raw = init && init.body ? init.body : "{}";
       question = (JSON.parse(raw) || {}).question || "";
     } catch (_) {}
-    return jsonResponse({ answer: answerFor(question) }, 600);
+    return jsonResponse({ answer: answerFor(question) }, 250);
   }
 
   // Everything else behaves normally.
