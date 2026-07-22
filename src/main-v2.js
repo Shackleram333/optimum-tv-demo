@@ -12537,6 +12537,12 @@ function le() {
         className: `tvw-panel`,
         "aria-label": E.header,
         children: [
+          !_ &&
+            (0, S.jsx)(
+              `div`,
+              { className: `tvw-panel__spark tvw-panel__spark--conv`, children: (0, S.jsx)(ee, { size: 22 }) },
+              `sparkconv`,
+            ),
           _
             ? (0, S.jsx)(`div`, {
                 className: `tvw-chips`,
