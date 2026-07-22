@@ -12564,15 +12564,16 @@ function le() {
                             t,
                           ),
                         ),
-                        (0, S.jsx)(
-                          `button`,
-                          {
-                            className: `tvw-chipbtn tvw-chipbtn--ask`,
-                            onClick: () => f(!0),
-                            children: E.inputPlaceholder,
-                          },
-                          `ask`,
-                        ),
+                        !d &&
+                          (0, S.jsx)(
+                            `button`,
+                            {
+                              className: `tvw-chipbtn tvw-chipbtn--ask`,
+                              onClick: () => f(!0),
+                              children: E.inputPlaceholder,
+                            },
+                            `ask`,
+                          ),
                       ],
                     },
                     `list`,
@@ -12624,7 +12625,6 @@ function le() {
                     }),
                   !i &&
                     o.length > 0 &&
-                    !d &&
                     (0, S.jsx)(`div`, {
                       className: `tvw-chips tvw-chips--followup`,
                       children: [
@@ -12635,15 +12635,16 @@ function le() {
                             t,
                           ),
                         ),
-                        (0, S.jsx)(
-                          `button`,
-                          {
-                            className: `tvw-chipbtn tvw-chipbtn--ask`,
-                            onClick: () => f(!0),
-                            children: E.inputPlaceholder,
-                          },
-                          `ask`,
-                        ),
+                        !d &&
+                          (0, S.jsx)(
+                            `button`,
+                            {
+                              className: `tvw-chipbtn tvw-chipbtn--ask`,
+                              onClick: () => f(!0),
+                              children: E.inputPlaceholder,
+                            },
+                            `ask`,
+                          ),
                       ],
                     }),
                 ],
