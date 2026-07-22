@@ -12537,55 +12537,53 @@ function le() {
         className: `tvw-panel`,
         "aria-label": E.header,
         children: [
-          _
-            ? (0, S.jsx)(`div`, {
-                className: `tvw-chips`,
-                children: [
-                  (0, S.jsx)(`div`, { className: `tvw-panel__spark`, children: (0, S.jsx)(ee, { size: 22 }) }, `spark`),
-                  o.map((e, t) =>
-                    (0, S.jsx)(
-                      `button`,
-                      { className: `tvw-chipbtn`, onClick: () => x(e, !0), children: e },
-                      t,
-                    ),
-                  ),
-                  (0, S.jsx)(
-                    `button`,
-                    {
-                      className: `tvw-chipbtn tvw-chipbtn--ask`,
-                      onClick: () => f(!0),
-                      children: E.inputPlaceholder,
-                    },
-                    `ask`,
-                  ),
-                ],
-              })
-            : (0, S.jsxs)(`div`, {
+          (0, S.jsxs)(`div`, {
+            className: `tvw-panel__lead`,
+            children: [
+              (0, S.jsx)(`div`, { className: `tvw-panel__spark`, children: (0, S.jsx)(ee, { size: 22 }) }, `spark`),
+              _ &&
+                (0, S.jsxs)(
+                  `div`,
+                  {
+                    className: `tvw-chips`,
+                    children: [
+                      o.map((e, t) =>
+                        (0, S.jsx)(
+                          `button`,
+                          { className: `tvw-chipbtn`, onClick: () => x(e, !0), children: e },
+                          t,
+                        ),
+                      ),
+                      (0, S.jsx)(
+                        `button`,
+                        {
+                          className: `tvw-chipbtn tvw-chipbtn--ask`,
+                          onClick: () => f(!0),
+                          children: E.inputPlaceholder,
+                        },
+                        `ask`,
+                      ),
+                    ],
+                  },
+                  `chips`,
+                ),
+            ],
+          }),
+          !_ &&
+            (0, S.jsxs)(`div`, {
                 className: `tvw-conversation`,
                 ref: p,
                 children: [
-                  n.map((e, mi) =>
+                  n.map((e) =>
                     e.role === `user`
-                      ? (0, S.jsxs)(
+                      ? (0, S.jsx)(
                           `div`,
                           {
-                            className: `tvw-userpill-row` + (mi === 0 ? ` tvw-userpill-row--first` : ``),
-                            children: [
-                              mi === 0 &&
-                                (0, S.jsx)(
-                                  `div`,
-                                  { className: `tvw-panel__spark`, children: (0, S.jsx)(ee, { size: 22 }) },
-                                  `spark`,
-                                ),
-                              (0, S.jsx)(
-                                `div`,
-                                {
-                                  className: `tvw-userpill`,
-                                  children: (0, S.jsx)(`span`, { children: e.lines[0] }),
-                                },
-                                `pill`,
-                              ),
-                            ],
+                            className: `tvw-userpill-row`,
+                            children: (0, S.jsx)(`div`, {
+                              className: `tvw-userpill`,
+                              children: (0, S.jsx)(`span`, { children: e.lines[0] }),
+                            }),
                           },
                           e.id,
                         )
